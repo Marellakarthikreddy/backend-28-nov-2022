@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function task(){
+			var name=document.getElementById("name").value
+			console.log(name)
+			var date=document.getElementById("date").value
+			console.log(date)
+			var number=document.getElementById("number").value
+			console.log(number)
+			var email=document.getElementById("email").value
+			console.log(email)
+			var password=document.getElementById("password").value
+			console.log(password)
+			fetch("http://localhost:4455/Register",{
+			method:"POST",
+			headers:{
+				"Content-Type":"application/json"
+			},
+			body:JSON.stringify({password:password,name:name,email:email,date:date,number:number})
+		})
+			.then((res)=>{
+			console.log(res)
+			return res.json()
+		})
+		}
+	</script>
+</head>
+<body>
+	<input  id="name"type="text" placeholder="enter a name"></p>
+	<input  id="date"type="text" placeholder="dd-mm-yy"></p>
+	<input  id="number"type="text" placeholder="enter number"></p>
+	<input id="email" type="text" placeholder="enter email id"></p>
+	<input  id="password"type="password" placeholder="enter  password"></p>
+	<button onclick="task()">click</button>
+
+</body>
+</html>

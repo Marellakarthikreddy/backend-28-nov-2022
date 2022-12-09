@@ -1,8 +1,11 @@
 const mongoose=require("mongoose")
 
 const newUserSchema={
-	username:String,
-	password:String 
+	password:String ,
+	email:String,
+	date:String,
+	name:String,
+	number:String
 }
 
 const Register=mongoose.model("students",newUserSchema)
